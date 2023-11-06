@@ -6,7 +6,7 @@ import '../models/tasks.dart';
 
 class ViewModel extends ChangeNotifier {
   List<Task> tasks = <Task>[];
-
+final username=TextEditingController();
 
   User user = User("Mona");
 
@@ -18,6 +18,9 @@ class ViewModel extends ChangeNotifier {
     tasks.add(newTask);
     notifyListeners();
 
+  }
+  String getUsername(){
+    return user.username;
   }
 
   void bottomSheetBuilder(Widget bottomSheetView, BuildContext context) {
